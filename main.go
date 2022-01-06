@@ -179,6 +179,51 @@ func main() {
 	fmt.Println(iLoveThisFunction(10, "Hello"))
 	nums, txt := iLoveThisFunction(5, "hello")
 	fmt.Println("values: ", nums, txt)
+
+	//fmt.Println("Calling a recursive function: ", RecursionFunc(1))
+
+	var man1 Man
+	var man2 Man
+	man1.asian = true
+	man1.name = "kshitj"
+	man1.age = 23
+
+	man2.age = 44
+	man2.name = "koii"
+	man2.asian = false
+
+	//fmt.Println("name: ", man1.name, "age: ", man1.age, "isAsian: ", man1.asian)
+
+	//man1
+	printMan(man1)
+	//man2
+	printMan(man2)
+
+	//Maps Of GOLANG
+
+	var mapA = map[string]int{"a": 1, "b": 2}
+	fmt.Println("Map values: ", mapA["b"], mapA["a"])
+
+	mapB := make(map[int]int)
+	mapB[1] = 56
+	mapB[2] = 567
+
+	fmt.Println("MapB values are: ", mapB[1], mapB[2])
+
+	var maapp = make(map[int]int)
+	var maaappp map[string]string
+	fmt.Printf("The type and values are: %T\t%v\n", maapp, maapp)
+	fmt.Printf("The type and values are: %T\t%v\n", maaappp, maaappp)
+	fmt.Println(maapp == nil)
+	fmt.Println(maaappp == nil)
+	//Checking value in a map
+	val, ok := mapB[1]
+	fmt.Println(val, ok)
+
+	for k, v := range mapB {
+		fmt.Println(k, v)
+	}
+
 }
 func newFunction(abc int) {
 	fmt.Println("i'm in new Function: Thank You for Calling Me !! the value you passed to me as a gift is : ", abc)
@@ -197,4 +242,23 @@ func iLoveThisFunction(x int, y string) (num int, txt string) {
 	num = x + x
 	txt = y + " World!!"
 	return
+}
+
+//Recursion
+func RecursionFunc(x int) int {
+	if x > 15 {
+		return x
+	}
+	fmt.Println(x)
+	return RecursionFunc(x + 1)
+}
+
+type Man struct {
+	name  string
+	age   int
+	asian bool
+}
+
+func printMan(man Man) {
+	fmt.Println("Name: ", man.name, "Age: ", man.age, "IsAsianMan: ", man.asian)
 }
