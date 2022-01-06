@@ -1,6 +1,6 @@
 # GoLang
 
-i'm in love with this kind of function
+i'm in love with this Function Syntax
 
 ```go
 
