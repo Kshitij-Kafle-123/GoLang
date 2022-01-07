@@ -262,3 +262,5 @@ type Man struct {
 func printMan(man Man) {
 	fmt.Println("Name: ", man.name, "Age: ", man.age, "IsAsianMan: ", man.asian)
 }
+
+//golang is good
